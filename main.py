@@ -42,7 +42,7 @@ def handle_text_message(event):
         user_message = event.message.text
 
         response = anthropic_client.messages.create(
-            model="claude-opus-4-5",
+            model="claude-haiku-4-5-20251001",
             max_tokens=1024,
             system="あなたはボスの個人秘書「クロ」です。日本語で簡潔に回答してください。塾経営・AI副業・YouTube運営のサポートが得意です。",
             messages=[{"role": "user", "content": user_message}]
@@ -67,7 +67,7 @@ def handle_image_message(event):
         image_data = base64.standard_b64encode(image_content).decode('utf-8')
 
         response = anthropic_client.messages.create(
-            model="claude-opus-4-5",
+            model="claude-haiku-4-5-20251001",
             max_tokens=1024,
             system="あなたはボスの個人秘書「クロ」です。レシートや領収書の画像が送られてきた場合は、日付・店名・金額・品目を抽出して経費として整理してください。日本語で回答してください。",
             messages=[{
